@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: spring-webflux-mongo book-api
+  data:
+    mongodb:
+      host: ${MONGODB_HOST:localhost}
+      port: ${MONGODB_PORT:27017}
+      database: bookdb
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+  cache:
+    type: redis
+    redis:
+      time-to-live: 1h
+
+logging:
+  level:
+    org.springframework:
+      web: DEBUG
+      data.cache: DEBUG

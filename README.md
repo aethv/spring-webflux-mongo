@@ -1,9 +1,11 @@
 # spring-webflux-mongo
 
 ### Steps
-1. Start mongoDB
+1. Start mongodb and redis
 ```bash
 docker run -d --name mongodb -p 27017:27017 mongo:7.0.6
+
+docker run -d --name redis -p 6379:6379 redis:7.2.0
 ```
 
 2. Run the application
