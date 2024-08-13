@@ -1,4 +1,4 @@
-package com.example.spring_webflux_mongo.controller;
+package com.example.spring_webflux_mongo.controller.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Positive;

@@ -8,26 +8,13 @@ import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-@Service
-@AllArgsConstructor
-public class BookService {
+public interface BookService {
 
-    private final BookRepository repository;
+    Flux<Book> getBooks();
 
-    public Flux<Book> getBooks() {
-        return repository.findAll();
-    }
+    Mono<Book> validateAndGetBookById(String id);
 
-    public Mono<Book> validateAndGetBookById(String id) {
-        return repository.findById(id)
-                .switchIfEmpty(Mono.error(new NotFoundException(id)));
-    }
+    Mono<Book> saveBook(Book book);
 
-    public Mono<Book> saveBook(Book book) {
-        return repository.save(book);
-    }
-
-    public Mono<Void> deleteBook(Book book) {
-        return repository.delete(book);
-    }
+    Mono<Void> deleteBook(Book book);
 }

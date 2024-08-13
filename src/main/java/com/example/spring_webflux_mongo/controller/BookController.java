@@ -1,6 +1,9 @@
 package com.example.spring_webflux_mongo.controller;
 
 import com.example.spring_webflux_mongo.config.CacheConfig;
+import com.example.spring_webflux_mongo.controller.dto.BookResponse;
+import com.example.spring_webflux_mongo.controller.dto.CreateBookRequest;
+import com.example.spring_webflux_mongo.controller.dto.UpdateBookRequest;
 import com.example.spring_webflux_mongo.mapper.BookMapper;
 import com.example.spring_webflux_mongo.model.Book;
 import com.example.spring_webflux_mongo.service.BookService;
